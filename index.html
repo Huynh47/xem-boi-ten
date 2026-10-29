@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <head>
+    <!-- Các thẻ meta và tiêu đề cũ của bạn ở đây -->
+    
+    <script>
+        // Thiết lập chìa khóa ẩn (bạn có thể đổi chữ 'nfc-chinh-chu' thành bất kỳ chữ gì bạn muốn)
+        const CHIA_KHOA = 'nfc-chinh-chu';
+        
+        // Kiểm tra đường link hiện tại
+        const urlParams = new URLSearchParams(window.location.search);
+        const tokenTruyCap = urlParams.get('key');
+
+        // Nếu không có chìa khóa hoặc chìa khóa sai thì chặn lại
+        if (tokenTruyCap !== CHIA_KHOA) {
+            document.write('<body style="background:#f4f4f9; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif;">');
+            document.write('<h2>⛔ Truy cập bị từ check. Vui lòng quét thẻ NFC để vào ứng dụng.</h2>');
+            document.write('</body>');
+            window.stop(); // Dừng tải toàn bộ nội dung web phía dưới
+        }
+    </script>
+</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Việt Danh Học - Quản Lý & Lập Cục</title>
